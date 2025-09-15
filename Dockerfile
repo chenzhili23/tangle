@@ -21,5 +21,5 @@ ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 
 # 启动命令
-CMD ["python","-u", "tangle.py"]
+CMD ["python","-u", "main.py"]
 
