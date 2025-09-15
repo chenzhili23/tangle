@@ -10,7 +10,6 @@ import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 
-from sympy import symbols
 
 # 假设 trendmaster.py 在同一目录下
 from trendmaster import BinanceAPI
