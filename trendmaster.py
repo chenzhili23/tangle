@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 
 import requests
-import torch
 import math
 import numpy as np
 import pandas as pd
@@ -15,7 +14,6 @@ import hashlib
 from urllib.parse import urlencode
 import json
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 class BinanceAPI:
@@ -316,14 +314,6 @@ class BinanceAPI:
         return self._request("GET", "/fapi/v1/exchangeInfo", params)
 
 
-# ---------------------- Utils ----------------------
-
-def set_seed(seed):
-    """Set the random seed for reproducibility."""
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    np.random.seed(seed)
-
 
 
 
@@ -517,8 +507,7 @@ class DataLoader:
 
 __all__ = [
     'DataLoader',
-    'BinanceAPI',
-    'set_seed'
+    'BinanceAPI'
 ]
 
 __version__ = '0.2.3'
