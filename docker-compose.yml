@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  tangle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - HTTP_PROXY=http://113.45.199.231:10809
+      - HTTPS_PROXY=http://113.45.199.231:10809
+      - http_proxy=http://113.45.199.231:10809
+      - https_proxy=http://113.45.199.231:10809
+    restart: unless-stopped
+    volumes:
+      - ./:/app  # 挂载项目目录
+    working_dir: /app
+    networks:
+      - trading-net
+
+networks:
+  trading-net:
+    driver: bridge
