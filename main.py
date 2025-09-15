@@ -41,7 +41,7 @@ class PrecisionTriangleBreakoutTrader:
         self.interval = interval
 
         # 策略参数
-        self.leverage = 2
+        self.leverage = 3
         self.stop_loss_pct = 0.005
         self.quick_profit_pct = 0.008
         self.min_volume_threshold = 5
